@@ -6,7 +6,7 @@ from routerr import user, article, product
 import os
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-
+from auth import authentication
 
 rakesh = FastAPI()
 # rakesh.include_router(house_get.router)
@@ -14,6 +14,8 @@ rakesh.include_router(blog_post.router)
 rakesh.include_router(user.router)
 rakesh.include_router(article.router)
 rakesh.include_router(product.router)
+rakesh.include_router(authentication.router)
+
 
 @rakesh.get("/hello")
 def hello():
